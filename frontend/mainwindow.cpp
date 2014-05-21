@@ -42,6 +42,9 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(mgr, SIGNAL(finished(QNetworkReply*)), this, SLOT(getResult(QNetworkReply*)));
 
     ui->webView->load(QUrl(url + "softorg_show.php?table=users"));
+
+    ui->stackedWidget->setCurrentIndex(12);
+    ui->stackedWidget_2->setCurrentIndex(0);
 }
 
 MainWindow::~MainWindow()
