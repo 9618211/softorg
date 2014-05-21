@@ -73,59 +73,7 @@ switch ($k) {
 		WHERE userssoft.users_id = users.id AND userssoft.soft_id = soft.id";
         break;
     case 7:
-        echo "Select 8<br>";
-		/*$query = "
-		SELECT platforms.name AS platformsname, COUNT(platform) AS platformsCount
-		FROM users, soft, userssoft, platforms, softplatforms
-		WHERE userssoft.users_id = users.id AND userssoft.soft_id = soft.id";
-		SELECT COUNT(Customer) AS CustomerNilsen FROM Orders
-		WHERE Customer='Nilsen'*/
-
-		/*$query = "
-		SELECT platforms.name AS platformsname, COUNT(
-			SELECT *
-			FROM users, userssoft, softplatforms
-			WHERE users.id = userssoft.users_id 
-				AND soft.id = userssoft.soft_id 
-				AND softplatforms.soft_id = soft.id) 
-		FROM platforms
-		";*/
-		
-		//
-
-		/*$query = "
-		SELECT platforms.name AS platformsname, results.totals
-		FROM platforms
-		LEFT JOIN (SELECT DISTINCT users.id AS usersid, COUNT(*) AS totals, softplatforms.platforms_id AS softplatformsid
-		        FROM users, soft, userssoft, softplatforms
-		        WHERE users.id = userssoft.users_id 
-					AND soft.id = userssoft.soft_id 
-					AND softplatforms.soft_id = soft.id
-				GROUP BY NULL) results
-			ON platforms.id = results.softplatformsid
-		";*/
-
-		//QUERY
-		/*$query = "
-		SELECT platforms.name AS platformsname, results.totals
-		FROM platforms
-		LEFT JOIN (SELECT COUNT(*) AS totals, softplatforms.platforms_id AS softplatformsid
-		        FROM soft, softplatforms
-		        WHERE softplatforms.soft_id = soft.id
-		        GROUP BY softplatformsid) results
-			ON platforms.id = results.softplatformsid
-		";*/
-		
-		/*$query = "
-		SELECT platforms.name AS platformsname, results.totals
-		FROM platforms
-		LEFT JOIN (SELECT DISTINCT users.name AS usersname, COUNT(*) AS totals, softplatforms.platforms_id AS softplatformsid
-		        FROM users, soft, userssoft, softplatforms
-		        WHERE users.id = userssoft.users_id 
-					AND soft.id = userssoft.soft_id 
-					AND softplatforms.soft_id = soft.id) results
-			ON platforms.id = results.softplatformsid
-		";*/
+        echo "Select 8<br>";//+
 		$query = "
 		SELECT platforms.name AS platformsname, COUNT(*)
 		FROM platforms
@@ -137,64 +85,6 @@ switch ($k) {
 				) results
 			ON platforms.id = results.softplatformsid
 		GROUP BY platforms.id";
-
-		/*$query = "
-		SELECT users.mail, users.name AS usersname, results.totals
-		FROM users, userssoft
-		LEFT JOIN (
-		SELECT soft.id AS softid, COUNT(*) AS totals
-		FROM soft
-		GROUP BY soft.id
-		) results
-		ON results.softid = userssoft.soft_id
-		WHERE users.id = userssoft.users_id";*/
-
-
-		// COUNT
-		/*$query = "
-		SELECT soft.name AS softname, COUNT(*) AS totals, softplatforms.platforms_id AS softplatformsid
-		FROM soft, softplatforms
-		WHERE softplatforms.soft_id = soft.id
-		GROUP BY soft.name";*/
-		
-		/*$query = "
-		SELECT soft.name AS softname, softplatforms.platforms_id AS softplatformsid
-		FROM soft, softplatforms
-		WHERE softplatforms.soft_id = soft.id";*/
-
-		//
-		/*$query = "
-		SELECT platforms.name AS platformsname, results.totals
-		FROM platforms
-		LEFT JOIN (SELECT COUNT(*) AS totals, 0 AS Bonus, softplatforms.platforms_id AS softplatformsid
-		        FROM users, soft, userssoft, softplatforms
-		        WHERE users.id = userssoft.users_id 
-					AND soft.id = userssoft.soft_id 
-					AND softplatforms.soft_id = soft.id
-				GROUP BY NULL) results
-			ON 0 = Results.Bonus
-		WHERE platforms.id = softplatformsid;
-		";*/
-
-		/*$query = "
-		SELECT platforms.name AS platformsname, results.totals
-		FROM platforms
-		LEFT JOIN (SELECT COUNT(*) AS totals, 0 AS Bonus
-		           FROM users
-		           GROUP BY NULL) results
-			ON 0 = Results.Bonus
-		";*/
-
-		/*
-		SELECT Tabl.Name, Tabl.Address, Results.Totals
-		FROM Databas.Tabl
-		LEFT JOIN (SELECT COUNT(*) AS Totals, 0 AS Bonus
-		           FROM Databas.Tabl
-		           WHERE TimeLogged='Noon'
-		           GROUP BY NULL) Results
-		     ON 0 = Results.Bonus
-		WHERE Status='URGENT';
-		*/
         break;
 }
 
