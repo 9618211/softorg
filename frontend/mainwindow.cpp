@@ -289,6 +289,8 @@ void MainWindow::on_pushButton_19_clicked()
     body.append(ui->lineEdit_22->text().toUtf8().data());
     body.append("&path=");
     body.append(ui->lineEdit_23->text().toUtf8().data());
+    body.append("&price=");
+    body.append(ui->lineEdit_27->text().toUtf8().data());
     mgr->post(request_soft, body);
 }
 

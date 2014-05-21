@@ -100,6 +100,7 @@ CREATE TABLE IF NOT EXISTS `soft` (
   `developers_id` TINYINT NULL DEFAULT NULL,
   `softcategories_id` TINYINT NULL DEFAULT NULL,
   `path` VARCHAR(256) NULL DEFAULT NULL,
+  `price` INT NULL DEFAULT 0,
   FOREIGN KEY (developers_id) REFERENCES developers (id),
   FOREIGN KEY (softcategories_id) REFERENCES softcategories (id),
   PRIMARY KEY (`id`)

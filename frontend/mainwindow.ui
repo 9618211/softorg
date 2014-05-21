@@ -367,7 +367,7 @@
        </sizepolicy>
       </property>
       <property name="currentIndex">
-       <number>12</number>
+       <number>8</number>
       </property>
       <widget class="QWidget" name="page">
        <layout class="QHBoxLayout" name="horizontalLayout_35">
@@ -1366,6 +1366,16 @@
             </item>
             <item>
              <widget class="QLineEdit" name="lineEdit_23"/>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_45">
+              <property name="text">
+               <string>price</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="lineEdit_27"/>
             </item>
             <item>
              <spacer name="verticalSpacer_9">

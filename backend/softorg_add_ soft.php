@@ -8,6 +8,7 @@ $sql = mysql_query("INSERT INTO $table SET
 	`name` = '".mysql_real_escape_string($_POST['name'])."', 
 	`developers_id` = '".mysql_real_escape_string($_POST['developers_id'])."',
 	`softcategories_id` = '".mysql_real_escape_string($_POST['softcategories_id'])."',
-	`path` = '".mysql_real_escape_string($_POST['path'])."'") or die(mysql_error()); 
+	`path` = '".mysql_real_escape_string($_POST['path'])."'
+	`price` = '".mysql_real_escape_string($_POST['price'])."'") or die(mysql_error()); 
 mysql_close($link);
 ?>

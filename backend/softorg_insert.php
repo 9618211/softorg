@@ -74,11 +74,11 @@ $result = mysql_query($query) or die(mysql_error());
 
 // `soft`, `id`, `name`, `developers_id`, `softcategories_id`, `path`
 $query = "
-INSERT INTO `soft` (`id`, `name`, `developers_id`, `softcategories_id`, `path`) VALUES
-(1, 'soft1', 1, 1, 'soft1'),
-(2, 'soft2', 1, 2, 'soft2'),
-(3, 'soft3', 2, 2, 'soft3'),
-(4, 'soft4', 2, 3, 'soft4');
+INSERT INTO `soft` (`id`, `name`, `developers_id`, `softcategories_id`, `path`, `price`) VALUES
+(1, 'soft1', 1, 1, 'soft1', 100),
+(2, 'soft2', 1, 2, 'soft2', 0),
+(3, 'soft3', 2, 2, 'soft3', 200),
+(4, 'soft4', 2, 3, 'soft4', 500);
 ";
 $result = mysql_query($query) or die(mysql_error()); 
 
